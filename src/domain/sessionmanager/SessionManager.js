@@ -1,4 +1,4 @@
-const session = require('Session');
+const session = require('src/domain/beans/Session');
 
 class SessionManager {
     sessions = [];
