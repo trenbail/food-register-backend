@@ -1,6 +1,6 @@
 const database = require('./FirebaseDao');
 
-class SubScriptionRepository {
+class SubscriptionRepository {
     addSubscripiton (){
 
     }

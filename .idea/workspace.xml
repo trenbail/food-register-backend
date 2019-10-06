@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f693685c-43f9-4509-ae6e-155b23b00525" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/beans/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/beans/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/UserRepository.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/SubScriptionRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/SubScriptionRepository.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -42,8 +40,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/repositories/SubScriptionRepository.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+            <state relative-caret-position="255">
+              <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
@@ -130,19 +128,6 @@
               <item name="food-register-inc-backend" type="b2602c69:ProjectViewProjectNode" />
               <item name="food-register-inc-backend" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-register-inc-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-register-inc-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="domain" type="462c0819:PsiDirectoryNode" />
-              <item name="beans" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="food-register-inc-backend" type="b2602c69:ProjectViewProjectNode" />
-              <item name="food-register-inc-backend" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="repositories" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -199,12 +184,12 @@
       <workItem from="1570322996547" duration="13570000" />
       <workItem from="1570387115384" duration="175000" />
       <workItem from="1570387302644" duration="3591000" />
-      <workItem from="1570391685631" duration="216000" />
+      <workItem from="1570391685631" duration="281000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18781000" />
+    <option name="totallyTimeSpent" value="18846000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -328,8 +313,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/repositories/SubScriptionRepository.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
+        <state relative-caret-position="255">
+          <caret line="15" column="1" lean-forward="true" selection-start-line="15" selection-start-column="1" selection-end-line="15" selection-end-column="1" />
         </state>
       </provider>
     </entry>
