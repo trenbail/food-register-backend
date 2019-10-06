@@ -10,7 +10,7 @@ class SessionManager {
         sessions.push();
     }
 
-    //End a Session if it has
+    //End a Session if it has been 30 min
     checkSessions(){
 
     }

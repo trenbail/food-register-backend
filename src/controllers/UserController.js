@@ -1,17 +1,27 @@
 var express = require('express');
 
-var userRoutes = express.Router();
+var userController = express.Router();
 
-
-
-
-userRoutes.route('/')
+userController.route('/')
     .get((request,response, next) => {
         response.send("Hello World");
     });
 
 
+userController.route('/login')
+    .post((request, response) => {
 
+    });
 
-module.exports = userRoutes;
+userController.route('/createProfile')
+    .post((request, response) => {
+
+    });
+
+userController.route('updateProfile')
+    .post((request, response) => {
+
+    });
+
+module.exports = userController;
 
