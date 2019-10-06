@@ -1,0 +1,11 @@
+class UserRepository {
+    createUser(){
+
+    }
+
+    updateUser(){
+
+    }
+
+
+}
