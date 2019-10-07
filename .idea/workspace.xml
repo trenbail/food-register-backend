@@ -1,123 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="ChangeListManager">
-    <list default="true" id="f693685c-43f9-4509-ae6e-155b23b00525" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/InventoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InventoryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/beans/Session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/beans/Session.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/sessionmanager/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/sessionmanager/SessionManager.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/UserRepository.js" afterDir="false" />
-    </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="FavoritesManager">
-    <favorites_list name="food-register-inc-backend" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JavaScript File" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectConfigurationFiles">
-    <option name="files">
-      <list>
-        <option value="$PROJECT_DIR$/.idea/vcs.xml" />
-        <option value="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="365" />
-    <option name="y" value="-15" />
-    <option name="width" value="1400" />
-    <option name="height" value="1000" />
-  </component>
-  <component name="ProjectId" id="1RrAmIM2ud2Fbsv8F7b3mzAvI2H" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
+  <component name="ProjectId" id="1RsWKwEp5I2nD3MaxM09El8DMST" />
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="javascript.nodejs.core.library.configured.version" value="10.16.0" />
-    <property name="nodejs_interpreter_path" value="node" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Github\food-register-inc-backend\src\domain\beans" />
-      <recent name="C:\Github\food-register-inc-backend\src\domain\sessionmanager" />
-    </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="f693685c-43f9-4509-ae6e-155b23b00525" name="Default Changelist" comment="" />
-      <created>1570321733847</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1570321733847</updated>
-      <workItem from="1570321735421" duration="1229000" />
-      <workItem from="1570322996547" duration="13570000" />
-      <workItem from="1570387115384" duration="175000" />
-      <workItem from="1570387302644" duration="3591000" />
-      <workItem from="1570391685631" duration="2188000" />
-      <workItem from="1570414788070" duration="73000" />
-      <workItem from="1570415004479" duration="7566000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>
