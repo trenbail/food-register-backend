@@ -15,7 +15,7 @@ class SessionManager {
 
     sessionExists(session){
         for(let sess of this.sessions){
-            if(session.sessionUser === sess.sessionUser){
+            if(session.sessionUser.userName === sess.sessionUser.userName){
                 return true;
             }
         }

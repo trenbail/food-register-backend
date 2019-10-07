@@ -14,8 +14,8 @@ userController.route('/')
 userController.route('/login')
     .post((request, response) => {
         userRepository.getUser(request.body.username)
-            .then((elem) =>{
-                let session = sessionManager.newSession(elem);
+            .then((user) =>{
+                let session = sessionManager.newSession(user);
                 response.cookie('sessionId',session.sessionId);
                 response.send(sessionManager.sessions);
         });
@@ -23,7 +23,7 @@ userController.route('/login')
 
 userController.route('/createProfile')
     .post((request, response) => {
-        let tempUser = new User(request.body.username,request.body.usertype,request.body.password,request.body.phone,request.body.address,request.body.email,request.body.subscriptions,request.body.familyinfo);
+        let tempUser = new User(request.body.username,request.body.usertype,request.body.password,request.body.phone,request.body.address,request.body.email,request.body.subscriptions,request.body.family);
         userRepository.createUser(tempUser);
     });
 

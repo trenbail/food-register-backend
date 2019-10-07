@@ -6,7 +6,7 @@ class Session{
     }
 
     constructor(user){
-        this.sessionUser = user.userName;
+        this.sessionUser = user;
         this.sessionId = user.userName;
         this.updateLastTouch();
     }

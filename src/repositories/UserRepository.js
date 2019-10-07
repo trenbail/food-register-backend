@@ -51,6 +51,4 @@ class UserRepository {
 }
 
 const userRepository = new UserRepository();
-let user1 = new user('Trenton','Admin',"password","512-923-0246","1234 Street","Trenton@email.com",{person: true},{person: true});
-userRepository.updateUser(user1);
 module.exports = userRepository;
