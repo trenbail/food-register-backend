@@ -11,11 +11,11 @@ class UserRepository {
     createUser(user){
         database.ref('users/'+ user.userName).set({
             'username': user.userName,
-            'userType': user.userType,
+            'usertype': user.userType,
             'password': user.password,
-            phone: user.phone,
-            address: user.address,
-            email: user.email,
+            'phone': user.phone,
+            'address': user.address,
+            'email': user.email,
             'subscriptions': user.subscriptions,
             'family': user.familyInformation
         });
@@ -26,7 +26,7 @@ class UserRepository {
     updateUser(user){
         database.ref('users/'+ user.userName).update({
             'username': user.userName,
-            'userType': user.userType,
+            'usertype': user.userType,
             'password': user.password,
             'phone': user.phone,
             'address': user.address,
@@ -41,7 +41,7 @@ class UserRepository {
             resolve(database.ref("users/").orderByKey().equalTo(username).once('value').then((snapshot) => {
                 //let tempuser = new user(snapshot.key)
                 let userobj = snapshot.toJSON()[username];
-                return new user(userobj.username,userobj.userType,userobj.password,userobj.phone,userobj.address,userobj.email,userobj.subscriptions,userobj.family);
+                return new user(userobj.username,userobj.usertype,userobj.password,userobj.phone,userobj.address,userobj.email,userobj.subscriptions,userobj.family);
             }))
         })
 
