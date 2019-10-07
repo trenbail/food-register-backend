@@ -9,7 +9,8 @@ const user = require('../domain/beans/User');
 class UserRepository {
 
     createUser(user){
-        database.ref('users/'+user.userName).set({
+        database.ref('users/'+ user.userName).set({
+            'username': user.userName,
             'userType': user.userType,
             'password': user.password,
             phone: user.phone,
@@ -23,7 +24,8 @@ class UserRepository {
     }
 
     updateUser(user){
-        database.ref('users/'+user.userName).update({
+        database.ref('users/'+ user.userName).update({
+            'username': user.userName,
             'userType': user.userType,
             'password': user.password,
             'phone': user.phone,
@@ -35,19 +37,20 @@ class UserRepository {
     }
 
     getUser(username){
-        database.ref("users/").orderByKey().equalTo(username).once('value').then((snapshot) => {
-            console.log(snapshot.val());
+        return new Promise((resolve, reject) => {
+            resolve(database.ref("users/").orderByKey().equalTo(username).once('value').then((snapshot) => {
+                //let tempuser = new user(snapshot.key)
+                let userobj = snapshot.toJSON()[username];
+                return new user(userobj.username,userobj.userType,userobj.password,userobj.phone,userobj.address,userobj.email,userobj.subscriptions,userobj.family);
+            }))
         })
+
     }
 
 
 }
 
 const userRepository = new UserRepository();
-
-var user1 = new user('Trenton',"Admin","password",'512-923-0246','1234 Street, Cedar Park, TX',"trenton@email.com",{Dogdays: true},{jim: "person"});
+let user1 = new user('Trenton','Admin',"password","512-923-0246","1234 Street","Trenton@email.com",{person: true},{person: true});
 userRepository.updateUser(user1);
-
-userRepository.getUser('Trenton');
-
 module.exports = userRepository;

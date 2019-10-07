@@ -1,18 +1,16 @@
+const user = require('../beans/User');
+
 class Session{
-    sessionId;
-    sessionUser;
-    lastTouch;
-
     updateLastTouch(){
-        this.lastTouch = Date().getTime();
-    }
-
-    generateId(){
-
+        this.lastTouch = new Date().getTime();
     }
 
     constructor(user){
-        this.sessionUser = user;
+        this.sessionUser = user.userName;
+        this.sessionId = user.userName;
+        this.updateLastTouch();
     }
 
 }
+
+module.exports = Session;

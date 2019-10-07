@@ -1,5 +1,5 @@
 const express = require('express');
-const inventoryController = express().Router();
+const inventoryController = express.Router();
 
 
 inventoryController.route('/registerFood')

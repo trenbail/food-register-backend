@@ -4,7 +4,7 @@ var app = express();
 var userController = require('./controllers/UserController');
 var inventoryController = require('./controllers/InventoryController');
 
-
+app.use(express.json());
 app.use('/user', userController);
 app.use('/inventory', inventoryController);
 

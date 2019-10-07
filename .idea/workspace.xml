@@ -2,11 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f693685c-43f9-4509-ae6e-155b23b00525" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/repositories/FoodPackageRepository.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../README.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/domain/beans/Subscription.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/beans/Subscription.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/repositories/SubscriptionRepository.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/InventoryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/InventoryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/UserController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/UserController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/beans/Session.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/beans/Session.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/sessionmanager/SessionManager.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/sessionmanager/SessionManager.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/repositories/UserRepository.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/repositories/UserRepository.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -90,7 +93,7 @@
       <workItem from="1570387302644" duration="3591000" />
       <workItem from="1570391685631" duration="2188000" />
       <workItem from="1570414788070" duration="73000" />
-      <workItem from="1570415004479" duration="813000" />
+      <workItem from="1570415004479" duration="7566000" />
     </task>
     <servers />
   </component>
