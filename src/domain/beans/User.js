@@ -1,13 +1,13 @@
 class User {
 
-    constructor(username,usertype,password,phone,address,email,subcriptions,familyinfo){
+    constructor(username,usertype,password,phone,address,email,subscriptions,familyinfo){
         this.userName = username;
         this.userType = usertype;
         this.password = password;
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.subscriptions = {};
+        this.subscriptions = subscriptions;
         this.familyInformation = familyinfo;
     }
 

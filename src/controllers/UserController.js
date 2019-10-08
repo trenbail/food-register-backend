@@ -1,13 +1,14 @@
 const express = require('express');
 const userController = express.Router();
 
+const _ = require('underscore');
 const globalFunction = require('../domain/sessionmanager/GlobalFunction');
 const sessionManager = require('../domain/sessionmanager/SessionManager');
 const userRepository = require('../repositories/UserRepository');
 const User = require('../domain/beans/User');
 
 
-userController.all("*", globalFunction.verifySession);
+//userController.all("*", globalFunction.verifySession);
 
 userController.route('/')
     .get((request,response, next) => {
@@ -28,7 +29,7 @@ userController.route('/login')
                         //Create a new session
                         let session = sessionManager.newSession(user);
                         response.cookie('sessionId', session.sessionId , {httpOnly: true});
-                        response.send(sessionManager.sessions);
+                        response.json(sessionManager.sessions);
                     } else {
                         response.json({error: "Username or password incorrect"});
                     }
@@ -48,10 +49,22 @@ userController.route('/createProfile')
                 if(!result) {
                     let tempUser = new User(data.username, data.usertype, data.password, data.phone, data.address, data.email, data.subscriptions, data.family);
                     userRepository.createUser(tempUser);
+                    response.status(200).json({success: "The user has been created"});
                 } else {
                         response.json({error: "User already exists!"});
                     }
             });
+    });
+
+userController.route("/getUser")
+    .get((request,response) => {
+        let sessionid = request.cookies.sessionId;
+        sessionManager.sessions.forEach((elem) => {
+            if(elem.sessionId === sessionid){
+                let temp =_.omit(elem.sessionUser,'password');
+                response.json(temp);
+            }
+        })
     });
 
 userController.route('/updateProfile')
