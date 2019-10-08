@@ -36,3 +36,45 @@ else
   "success" : "The user has been created"
 }
 ```
+
+**/user/updateprofile** 
+
+data to post
+```
+{
+  'username': user.userName,
+  'usertype': user.userType,
+  'password': user.password,
+  'phone': user.phone,
+  'address': user.address,
+  'email': user.email,
+  'subscriptions': user.subscriptions,
+  'family': user.familyInformation
+}
+```
+returns if error
+```
+{
+  "error" : "<error message>"
+}
+```
+else
+```
+{
+  "success" : "The user has been updated"
+}
+```
+
+**/inventory/registerfood** 
+
+data to post
+```
+{
+  "name": foodObj.name,
+  "description": foodObj.description,
+  "type": foodObj.type,
+  "imageurl": foodObj.imageurl,
+  "quantity": foodObj.quantity,
+  "members": foodObj.members
+ }
+```
