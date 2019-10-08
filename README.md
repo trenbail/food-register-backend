@@ -9,7 +9,8 @@ data to post
 ```
 returns a session cookie to the browser
 
-**/user/createprofile**
+**/user/createprofile** 
+
 data to post
 ```
 {
