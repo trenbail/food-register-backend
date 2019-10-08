@@ -5,15 +5,19 @@ class SessionManager {
         this.sessions = [];
     }
 
+    getSessions(){
+        return this.sessions;
+    }
+
     newSession(user){
         let temp = new session(user);
-        if(!this.sessionExists(temp)){
+        if(!this.userSessionExists(temp)){
             this.sessions.push(temp);
         }
         return temp;
     }
 
-    sessionExists(session){
+    userSessionExists(session){
         for(let sess of this.sessions){
             if(session.sessionUser.userName === sess.sessionUser.userName){
                 return true;
@@ -22,9 +26,20 @@ class SessionManager {
         return false;
     }
 
+
+    idSessionExists(sessionid){
+        let returnFlag = false;
+        this.sessions.forEach((elem) => {
+            if(elem.sessionId === sessionid){
+                returnFlag = true;
+            }
+        });
+        return returnFlag;
+    }
+
+
     //End a Session if it has been 30 min
     checkSessions(){
-
     }
 
 }

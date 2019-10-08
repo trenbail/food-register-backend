@@ -1,10 +1,13 @@
-var express = require('express');
-var app = express();
+const express = require('express');
+const bodyparser = require('body-parser');
+const cookieparser = require('cookie-parser');
+const app = express();
 
-var userController = require('./controllers/UserController');
-var inventoryController = require('./controllers/InventoryController');
+const userController = require('./controllers/UserController');
+const inventoryController = require('./controllers/InventoryController');
 
-app.use(express.json());
+app.use(bodyparser.json());
+app.use(cookieparser());
 app.use('/user', userController);
 app.use('/inventory', inventoryController);
 

@@ -11,6 +11,15 @@ class User {
         this.familyInformation = familyinfo;
     }
 
+    authenticate(password){
+        let returnFlag = false;
+        if(this.password === password){
+            returnFlag = true;
+        }
+        return returnFlag
+    }
+
+
 }
 
 module.exports = User;

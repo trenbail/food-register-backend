@@ -44,7 +44,12 @@ class UserRepository {
                 return new user(userobj.username,userobj.usertype,userobj.password,userobj.phone,userobj.address,userobj.email,userobj.subscriptions,userobj.family);
             }))
         })
+    }
 
+    doesUserExist(username){
+       return database.ref("users/").orderByKey().equalTo(username).once('value').then((snapshot) => {
+            return snapshot.exists();
+        })
     }
 
 
