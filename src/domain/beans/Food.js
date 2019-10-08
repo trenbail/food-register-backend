@@ -6,6 +6,9 @@ class Food{
         this.type = itemtype;
         this.imageurl = imageurl;
         this.quantity = quantity;
+        this.members = [];
     }
 
 }
+
+module.exports = Food;

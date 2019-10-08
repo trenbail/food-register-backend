@@ -1,4 +1,7 @@
-const database = require('./FirebaseDao');
+const firebase = require('./FirebaseDao');
+const database = firebase.database();
+
+const food = require('../domain/beans/Food');
 
 class FoodRepository {
     addFood(foodObj){
@@ -31,3 +34,8 @@ class FoodRepository {
 
 
 }
+const foodRepository = new FoodRepository();
+let food1 = new food("Peanuts","A vary yummy nut", "nut","",5);
+foodRepository.addFood(food1);
+
+module.exports = foodRepository;
