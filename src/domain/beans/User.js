@@ -7,7 +7,7 @@ class User {
         this.phone = phone;
         this.address = address;
         this.email = email;
-        this.subscriptions = subcriptions;
+        this.subscriptions = {};
         this.familyInformation = familyinfo;
     }
 
