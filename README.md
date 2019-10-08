@@ -1,10 +1,37 @@
 # Completed Endpoints
-
 **/user/login**
 data to post
 ```
 {
   "username": "<username>",
-  "password": "<password>
+  "password": "<password>"
+}
+```
+returns a session cookie to the browser
+
+**/user/createprofile**
+data to post
+```
+{
+  'username': user.userName,
+  'usertype': user.userType,
+  'password': user.password,
+  'phone': user.phone,
+  'address': user.address,
+  'email': user.email,
+  'subscriptions': user.subscriptions,
+  'family': user.familyInformation
+}
+```
+returns if error
+```
+{
+  "error" : "<error message>"
+}
+```
+else
+```
+{
+  "success" : "The user has been created"
 }
 ```
