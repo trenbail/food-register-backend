@@ -1,9 +1,12 @@
 class CarePackage {
 
-    constructor(carepackagename, carepackagetype, carepackageitems, carepackagequantity){
-        this.carePackageName = carepackagename;
-        this.carePackageType = carepackagetype;
-        this.carePackageItems = carepackageitems;
-        this.carePackageQuantity = carepackagequantity
+    constructor(carepackagename, carepackagedescription,carepackagetype, carepackageitems, carepackagequantity){
+        this.packageName = carepackagename;
+        this.packageDescription = carepackagedescription;
+        this.packageType = carepackagetype;
+        this.packageItems = carepackageitems;
+        this.packageQuantity = carepackagequantity;
+        this.packageMembers = [];
     }
+
 }

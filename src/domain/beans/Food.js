@@ -1,9 +1,9 @@
-class Item{
+class Food{
 
     constructor(itemname, itemdesc, itemtype, imageurl,quantity){
-        this.itemName = itemname;
-        this.itemDescription = itemdesc;
-        this.itemType = itemtype;
+        this.name = itemname;
+        this.description = itemdesc;
+        this.type = itemtype;
         this.imageurl = imageurl;
         this.quantity = quantity;
     }
