@@ -9,7 +9,7 @@ data to post
 ```
 returns a session cookie to the browser
 
-**/user/createprofile** 
+**/user/createProfile** 
 
 data to post
 ```
@@ -37,7 +37,7 @@ else
 }
 ```
 
-**/user/updateprofile** 
+**/user/updateProfile** 
 
 data to post
 ```
@@ -65,7 +65,7 @@ else
 }
 ```
 
-**/inventory/registerfood** 
+**/inventory/registerFood** 
 
 data to post
 ```
