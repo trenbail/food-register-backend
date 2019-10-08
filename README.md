@@ -1,6 +1,7 @@
 # Completed Endpoints
 
-** /user/login **
+**/user/login**
+data to post
 ```
 {
   "username": "<username>",
