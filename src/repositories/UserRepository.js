@@ -38,9 +38,6 @@ class UserRepository {
         return new Promise((resolve, reject) => {
             resolve(database.ref("users/").orderByKey().equalTo(username).once('value').then((snapshot) => {
                 let userobj = snapshot.toJSON()[username];
-                if(userobj.subscriptions === undefined){
-                    userobj.subscriptions = {};
-                }
                 return new user(userobj.username,userobj.usertype,userobj.password,userobj.phone,userobj.address,userobj.email,userobj.subscriptions,userobj.family);
             }))
         })

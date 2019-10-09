@@ -9,6 +9,7 @@ const carePackageSubscribe = require('../domain/subscribe/CarePackageSubscribe')
 const sessionManager = require('../domain/sessionmanager/SessionManager');
 const carePackageRepository = require('../repositories/CarePackageRepository');
 const foodRepository = require('../repositories/FoodRepository');
+const _ = require("underscore");
 
 inventoryController.all("*", globalFunction.verifySession);
 
@@ -18,6 +19,7 @@ inventoryController.route('/registerFood')
         if(data !== undefined){
             let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
             foodRepository.addFood(temp);
+            response.status(200).json({success: "Food Added!"});
         }
     });
 
@@ -68,17 +70,24 @@ inventoryController.route('/subscribeToCarePackage/:carepackage')
             });
     });
 
-inventoryController.route('/getFoodItems')
+inventoryController.route('/getFoodInventory')
     .get((request,response) => {
-        //TODO: DO THIS
+        foodRepository.getFoodInventory().then((allFood) => {
+            let keys = _.keys(allFood);
+            for(let obj of keys){
+                delete allFood[keys].members;
+            }
+            response.json(allFood);
+        });
     });
 
 inventoryController.route('/registerCarePackage')
     .post((request, response) => {
-        let data = response.body;
+        let data = request.body;
         if(data !== undefined){
-            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.members)
+            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.members);
             carePackageRepository.addCarePackage(temp);
+            response.json({success: "care package added"});
         }
     });
 
@@ -91,9 +100,15 @@ inventoryController.route('/editCarePackage')
         }
     });
 
-inventoryController.route('/getCarePackages')
+inventoryController.route('/getCarePackageInventory')
     .get((request,response) => {
-        //TODO: DO THIS
+        carePackageRepository.getCarePackageInventory().then((allCarePackage) => {
+            let keys = _.keys(allCarePackage);
+            for(let obj of keys){
+                delete allCarePackage[keys].members;
+            }
+            response.json(allCarePackage);
+        });
     });
 
 inventoryController.route('/subscribetocarepackage/:carepackage')

@@ -5,6 +5,9 @@ class Food{
         this.type = itemtype;
         this.imageurl = imageurl;
         this.quantity = quantity;
+        if(members === undefined){
+            members = {};
+        }
         this.members = members;
     }
 }

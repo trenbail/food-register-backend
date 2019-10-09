@@ -35,20 +35,21 @@ class FoodRepository {
     }
 
     getFoodInventory(){
+       return database.ref('inventory/food/').once('value').then((snapshot) => {
+            let temp = snapshot.toJSON();
+            return temp;
+        });
     }
 
     getFoodItem(itemName){
        return database.ref('inventory/food/').orderByKey().equalTo(itemName).once('value').then((snapshot) => {
             let temp = snapshot.toJSON()[itemName];
-            if(temp.members === undefined){
-                temp.members = {};
-            }
             return new food(temp.name,temp.description,temp.type,temp.imageurl,temp.quantity,temp.members);
         });
     }
 
-
 }
 
 const foodRepository = new FoodRepository();
+
 module.exports = foodRepository;

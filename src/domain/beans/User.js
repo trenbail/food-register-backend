@@ -7,7 +7,15 @@ class User {
         this.phone = phone;
         this.address = address;
         this.email = email;
+
+        if(subscriptions === undefined){
+            subscriptions = {};
+        }
         this.subscriptions = subscriptions;
+
+        if(familyinfo === undefined){
+            familyinfo = {};
+        }
         this.familyInformation = familyinfo;
     }
 
