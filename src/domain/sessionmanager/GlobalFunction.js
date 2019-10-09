@@ -14,10 +14,10 @@ const  verifySession = (req,res,next)=>{
            next();
         } else {
             res.clearCookie("sessionId");
-            res.status(401).send("You are not authorized!");
+            res.status(403).json({error: "You are not authorized"});
         }
     } else {
-        res.status(401).send("You are not authorized");
+        res.status(403).json({error: "You are not authorized"});
     }
 };
 
