@@ -16,6 +16,7 @@ inventoryController.all("*", globalFunction.verifySession);
 inventoryController.route('/registerFood')
     .post((request, response) => {
         let data = response.body;
+        console.log(data);
         if(data !== undefined){
             let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
             foodRepository.addFood(temp);
