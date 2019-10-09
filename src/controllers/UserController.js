@@ -28,7 +28,7 @@ userController.route('/login')
                     if (user.authenticate(data.password)) {
                         //Create a new session
                         let session = sessionManager.newSession(user);
-                        response.cookie('sessionId', session.sessionId , {httpOnly: true});
+                        response.cookie('sessionId', session.sessionId);
                         response.json(sessionManager.sessions);
                     } else {
                         response.json({error: "Username or password incorrect"});
