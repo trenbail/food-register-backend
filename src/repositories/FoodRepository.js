@@ -35,7 +35,6 @@ class FoodRepository {
     }
 
     getFoodInventory(){
-
     }
 
     getFoodItem(itemName){
@@ -50,6 +49,6 @@ class FoodRepository {
 
 
 }
-const foodRepository = new FoodRepository();
 
+const foodRepository = new FoodRepository();
 module.exports = foodRepository;

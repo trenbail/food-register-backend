@@ -3,8 +3,20 @@ const foodRepository = require('../../repositories/FoodRepository');
 
 
 class FoodSubscribe {
-    static subscribeFood(){
+    static subscribe(userObj, foodObj){
+        userObj.subscriptions[foodObj.name] = true;
+        foodObj.members[userObj.userName] = true;
 
+        userRepository.subscribeFood(userObj);
+        foodRepository.addFoodMember(foodObj);
+    }
+
+    static unsubscribe(userObj, foodObj){
+       delete userObj.subscriptions[foodObj.name];
+       delete foodObj.members[userObj.userName];
+
+       userRepository.unsubscribeFood(userObj);
+       foodRepository.removeFoodMember(foodObj);
     }
 }
 

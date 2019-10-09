@@ -19,8 +19,6 @@ class UserRepository {
             'subscriptions': user.subscriptions,
             'family': user.familyInformation
         });
-
-
     }
 
     updateUser(user){
@@ -58,13 +56,19 @@ class UserRepository {
         database.ref('users/' + userObj.userName + "/subscriptions").update(userObj.subscriptions);
     }
 
-    removeFoodSubscription(userObj){
+    unsubscribeFood(userObj){
         database.ref('users/' + userObj.userName + "/subscriptions").set(userObj.subscriptions);
     }
 
     subscribeCarePackage(userObj){
-
+        database.ref('users/' + userObj.userName + "/subscriptions").update(userObj.subscriptions);
     }
+
+    unsubscribeCarePackage(userObj){
+        database.ref('users/' + userObj.userName + "/subscriptions").set(userObj.subscriptions);
+    }
+
+
 
 
 }

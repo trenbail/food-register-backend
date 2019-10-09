@@ -1,12 +1,15 @@
 class CarePackage {
 
     constructor(carepackagename, carepackagedescription,carepackagetype, carepackageitems, carepackagequantity){
-        this.packageName = carepackagename;
-        this.packageDescription = carepackagedescription;
-        this.packageType = carepackagetype;
-        this.packageItems = carepackageitems;
-        this.packageQuantity = carepackagequantity;
-        this.packageMembers = [];
+        this.name = carepackagename;
+        this.description = carepackagedescription;
+        this.type = carepackagetype;
+        this.items = carepackageitems;
+        this.quantity = carepackagequantity;
+        this.members = [];
     }
 
 }
+
+
+module.exports = CarePackage;

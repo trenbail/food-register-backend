@@ -6,6 +6,7 @@ const app = express();
 const userController = require('./controllers/UserController');
 const inventoryController = require('./controllers/InventoryController');
 
+
 app.use(bodyparser.json());
 app.use(cookieparser());
 app.use('/user', userController);

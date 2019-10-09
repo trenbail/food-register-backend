@@ -9,6 +9,16 @@ class SessionManager {
         return this.sessions;
     }
 
+    getSession(sessionID){
+        let returnFlag = null;
+        for(let elem of this.sessions){
+            if(elem.sessionId === sessionID){
+                returnFlag = elem.sessionUser;
+            }
+        }
+        return returnFlag;
+    }
+
     newSession(user){
         let temp = new session(user);
         if(!this.userSessionExists(temp)){
