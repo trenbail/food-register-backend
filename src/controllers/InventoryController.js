@@ -111,7 +111,7 @@ inventoryController.route('/editCarePackage')
         if(data !== undefined){
             let temp = new CarePackage(data.name,data.description,data.type,data.items,data.quantity,data.members);
             carePackageRepository.editCarePackage(temp);
-            response.status.json({success: "Care Package Updated"});
+            response.status(200).json({success: "Care Package Updated"});
         }
     });
 
