@@ -88,10 +88,6 @@ inventoryController.route('/subscribeToCarePackage/:carepackage')
 inventoryController.route('/getFoodInventory')
     .get((request,response) => {
         foodRepository.getFoodInventory().then((allFood) => {
-            let keys = _.keys(allFood);
-            for(let obj of keys){
-                delete allFood[obj].members;
-            }
             response.json(allFood);
         });
     });
@@ -119,10 +115,6 @@ inventoryController.route('/editCarePackage')
 inventoryController.route('/getCarePackageInventory')
     .get((request,response) => {
         carePackageRepository.getCarePackageInventory().then((allCarePackage) => {
-            let keys = _.keys(allCarePackage);
-            for(let obj of keys){
-                delete allCarePackage[obj].members;
-            }
             response.json(allCarePackage);
         });
     });
