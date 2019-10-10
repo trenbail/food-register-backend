@@ -43,7 +43,6 @@ userController.route('/login')
 userController.route('/createProfile')
     .post((request, response) => {
         let data = request.body;
-        console.log(data);
         //Check if the user exists
         userRepository.doesUserExist(data.username)
             .then((result) => {
