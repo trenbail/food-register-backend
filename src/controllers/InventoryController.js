@@ -18,7 +18,7 @@ inventoryController.route('/registerFood')
         let data = request.body;
         console.log(data);
         if(data !== undefined){
-            let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
+            let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity,{});
             foodRepository.addFood(temp);
             response.status(200).json({success: "Food Added!"});
         }
@@ -28,7 +28,7 @@ inventoryController.route('/editFood')
     .post((request, response) => {
         let data = request.body;
         if(data !== undefined){
-            let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
+            let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity,data.members);
             foodRepository.editFood(temp);
         }
     });
@@ -50,6 +50,19 @@ inventoryController.route('/subscribeToFood/:food')
                 foodSubscribe.unsubscribe(userObj, foodObj);
                 response.json({success: "Food has been deleted"});
             });
+    });
+
+inventoryController.route('/getSubscribedFood')
+    .get((request,response) => {
+        let userObj = sessionManager.getSession(request.cookies.sessionId);
+        foodRepository.getFoodInventory().then((fooditems) => {
+            let packages = {};
+            let keys = _.keys(userObj.subscriptions.food);
+            for(let name of keys){
+               packages[name] = fooditems[name];
+            }
+            response.status(200).json(packages);
+        });
     });
 
 inventoryController.route('/subscribeToCarePackage/:carepackage')
@@ -76,7 +89,7 @@ inventoryController.route('/getFoodInventory')
         foodRepository.getFoodInventory().then((allFood) => {
             let keys = _.keys(allFood);
             for(let obj of keys){
-                delete allFood[keys].members;
+                delete allFood[obj].members;
             }
             response.json(allFood);
         });
@@ -86,7 +99,7 @@ inventoryController.route('/registerCarePackage')
     .post((request, response) => {
         let data = request.body;
         if(data !== undefined){
-            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.members);
+            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.quantity,{});
             carePackageRepository.addCarePackage(temp);
             response.json({success: "care package added"});
         }
@@ -96,7 +109,7 @@ inventoryController.route('/editCarePackage')
     .post((request, response) => {
         let data = request.body;
         if(data !== undefined){
-            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.members)
+            let temp = new CarePackage(data.name,data.description,data.type,data.items,data.quantity,data.members);
             carePackageRepository.editCarePackage(temp);
         }
     });
@@ -106,7 +119,7 @@ inventoryController.route('/getCarePackageInventory')
         carePackageRepository.getCarePackageInventory().then((allCarePackage) => {
             let keys = _.keys(allCarePackage);
             for(let obj of keys){
-                delete allCarePackage[keys].members;
+                delete allCarePackage[obj].members;
             }
             response.json(allCarePackage);
         });
@@ -114,8 +127,25 @@ inventoryController.route('/getCarePackageInventory')
 
 inventoryController.route('/subscribetocarepackage/:carepackage')
     .post((request,response) => {
-       let package = request.params.carepackage;
-       carePackageRepository.getCarePackage(package);
+       let carepackage = request.params.carepackage;
+       let userObj = sessionManager.getSession(request.cookies.sessionId);
+       carePackageRepository.getCarePackage(carepackage).then((carePackageObj) => {
+           carePackageSubscribe.subscribe(userObj,carePackageObj);
+           response.status(200).json({success: "Subscribed to care package!"});
+       });
+    });
+
+inventoryController.route('/getSubscribedCarePackages')
+    .get((request,response) => {
+        let userObj = sessionManager.getSession(request.cookies.sessionId);
+        carePackageRepository.getCarePackageInventory().then((carepackages) => {
+            let packages = {};
+            let keys = _.keys(userObj.subscriptions.carepackages);
+            for(let name of keys){
+                packages[name] = carepackages[name];
+            }
+            response.status(200).json(packages);
+        });
     });
 
 
