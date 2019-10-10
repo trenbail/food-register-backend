@@ -15,7 +15,7 @@ inventoryController.all("*", globalFunction.verifySession);
 
 inventoryController.route('/registerFood')
     .post((request, response) => {
-        let data = response.body;
+        let data = request.body;
         console.log(data);
         if(data !== undefined){
             let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
@@ -26,7 +26,7 @@ inventoryController.route('/registerFood')
 
 inventoryController.route('/editFood')
     .post((request, response) => {
-        let data = response.body;
+        let data = request.body;
         if(data !== undefined){
             let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity);
             foodRepository.editFood(temp);
@@ -94,7 +94,7 @@ inventoryController.route('/registerCarePackage')
 
 inventoryController.route('/editCarePackage')
     .post((request, response) => {
-        let data = response.body;
+        let data = request.body;
         if(data !== undefined){
             let temp = new CarePackage(data.name,data.description,data.type,data.items,data.members)
             carePackageRepository.editCarePackage(temp);
