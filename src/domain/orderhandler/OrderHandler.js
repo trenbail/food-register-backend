@@ -5,14 +5,15 @@ const carePackageRepository = require('../../repositories/CarePackageRepository'
 
 class OrderHandler {
 
-    static fulfillOrder(OrderObj){
-        let keys = _.keys(OrderObj.items);
+    static fulfillOrder(orderObj){
+        let keys = _.keys(orderObj.items);
         for(let item of keys){
-            if(OrderObj.items[item].itemType === 'food'){
-                this.updateFoodInventory(OrderObj.items[item]);
-            } else if (OrderObj.items[item].itemType === 'carepackage') {
-                this.updateCarePackageInventory(OrderObj.items[item]);
+            if(orderObj.items[item].itemType === 'food'){
+                this.updateFoodInventory(orderObj.items[item]);
+            } else if (orderObj.items[item].itemType === 'carepackage') {
+                this.updateCarePackageInventory(orderObj.items[item]);
             }
+            orderObj.status = 'completed';
             //NOTIFY USER HERE
             //TODO: NOTIFY USER SOMEHOW
         }

@@ -16,6 +16,17 @@ class OrderRepository {
         })
     }
 
+    editOrder(orderObj){
+        database.ref("/orders/" + orderObj.orderNo).update({
+            "orderno": orderObj.orderNo,
+            "user": orderObj.user,
+            "items": orderObj.items,
+            "status": orderObj.status,
+            "completedBy": orderObj.completedBy,
+            "completeddate": orderObj.completedDate
+        })
+    }
+
     getOpenOrders(){
         return database.ref("/orders").once('value').then((snapshot) => {
             let orders = snapshot.toJSON();

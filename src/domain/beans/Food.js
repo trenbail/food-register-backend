@@ -4,7 +4,7 @@ class Food{
         this.description = itemdesc;
         this.type = itemtype;
         this.imageurl = imageurl;
-        this.quantity = quantity;
+        this.quantity = Number(quantity);
         if(members === undefined){
             members = {};
         }

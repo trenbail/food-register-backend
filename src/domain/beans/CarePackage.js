@@ -5,7 +5,7 @@ class CarePackage {
         this.description = description;
         this.type = type;
         this.items = items;
-        this.quantity = quantity;
+        this.quantity = Number(quantity);
 
         if(members === undefined){
             members = {};
