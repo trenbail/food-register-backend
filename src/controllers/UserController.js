@@ -47,7 +47,7 @@ userController.route('/createProfile')
         userRepository.doesUserExist(data.username)
             .then((result) => {
                 if(!result) {
-                    let tempUser = new User(data.username, data.usertype, data.password, data.phone, data.address, data.email, data.subscriptions, data.family);
+                    let tempUser = new User(data.username, data.usertype, data.password, data.phone, data.address, data.email, {}, {});
                     userRepository.createUser(tempUser);
                     response.status(200).json({success: "The user has been created"});
                 } else {
