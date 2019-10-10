@@ -98,6 +98,7 @@ inventoryController.route('/getFoodInventory')
 inventoryController.route('/registerCarePackage')
     .post((request, response) => {
         let data = request.body;
+        console.log(data);
         if(data !== undefined){
             let temp = new CarePackage(data.name,data.description,data.type,data.items,data.quantity,{});
             carePackageRepository.addCarePackage(temp);
