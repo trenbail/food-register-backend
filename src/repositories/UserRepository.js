@@ -50,19 +50,19 @@ class UserRepository {
     }
 
     subscribeFood(userObj){
-        database.ref('users/' + userObj.userName + "/subscriptions/food").update(userObj.subscriptions);
+        database.ref('users/' + userObj.userName + "/subscriptions/food").update(userObj.subscriptions.food);
     }
 
     unsubscribeFood(userObj){
-        database.ref('users/' + userObj.userName + "/subscriptions/food").set(userObj.subscriptions);
+        database.ref('users/' + userObj.userName + "/subscriptions/food").set(userObj.subscriptions.food);
     }
 
     subscribeCarePackage(userObj){
-        database.ref('users/' + userObj.userName + "/subscriptions/carepackages").update(userObj.subscriptions);
+        database.ref('users/' + userObj.userName + "/subscriptions/carepackages").update(userObj.subscriptions.carepackages);
     }
 
     unsubscribeCarePackage(userObj){
-        database.ref('users/' + userObj.userName + "/subscriptions/carepackages").set(userObj.subscriptions);
+        database.ref('users/' + userObj.userName + "/subscriptions/carepackages").set(userObj.subscriptions.carepackages);
     }
 
 

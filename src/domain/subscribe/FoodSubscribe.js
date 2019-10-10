@@ -4,7 +4,7 @@ const foodRepository = require('../../repositories/FoodRepository');
 
 class FoodSubscribe {
     static subscribe(userObj, foodObj){
-        userObj.subscriptions[foodObj.name] = true;
+        userObj.subscriptions.food[foodObj.name] = true;
         foodObj.members[userObj.userName] = true;
 
         userRepository.subscribeFood(userObj);
@@ -12,7 +12,7 @@ class FoodSubscribe {
     }
 
     static unsubscribe(userObj, foodObj){
-       delete userObj.subscriptions[foodObj.name];
+       delete userObj.subscriptions.food[foodObj.name];
        delete foodObj.members[userObj.userName];
 
        userRepository.unsubscribeFood(userObj);

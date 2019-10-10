@@ -4,7 +4,7 @@ const carePackageRepository = require('../../repositories/CarePackageRepository'
 class CarePackageSubscribe {
 
     static subscribe(userObj,carePackageObj){
-        userObj.subscriptions[carePackageObj.name] = true;
+        userObj.subscriptions.carepackages[carePackageObj.name] = true;
         carePackageObj.members[userObj.name] = true;
 
         userRepository.subscribeCarePackage(userObj);
@@ -12,7 +12,7 @@ class CarePackageSubscribe {
     }
 
     static unsubscribe(userObj,carePackageObj){
-        delete userObj.subscriptions[carePackageObj.name];
+        delete userObj.subscriptions.carepackages[carePackageObj.name];
         delete carePackageObj.members[userObj.name];
 
         userRepository.unsubscribeCarePackage(userObj);

@@ -39,6 +39,10 @@ class CarePackageRepository {
         })
     }
 
+    removeMember(carePackageObj){
+        database.ref('inventory/carepackages/'+ carePackageObj.name + "/members").set(carePackageObj.members);
+    }
+
 }
 const carePackageRepository = new CarePackageRepository();
 module.exports = carePackageRepository;
