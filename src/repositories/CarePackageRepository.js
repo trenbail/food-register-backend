@@ -15,7 +15,7 @@ class CarePackageRepository {
         });
     }
     editCarePackage(carepackageObj){
-        database.ref('inventory/carepackages/' + carepackageObj.packageName).update({
+        database.ref('inventory/carepackages/' + carepackageObj.name).update({
             "name": carepackageObj.name,
             "description": carepackageObj.description,
             "type": carepackageObj.type,
