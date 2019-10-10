@@ -30,6 +30,7 @@ inventoryController.route('/editFood')
         if(data !== undefined){
             let temp = new Food(data.name,data.description,data.type,data.imageurl,data.quantity,data.members);
             foodRepository.editFood(temp);
+            response.status(200).json({success: `${data.name} has been edited!`})
         }
     });
 
