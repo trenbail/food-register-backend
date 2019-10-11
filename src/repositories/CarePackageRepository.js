@@ -34,7 +34,7 @@ class CarePackageRepository {
 
     getCarePackage(carePackageName){
         return database.ref("inventory/carepackages/" + carePackageName).once('value').then((snapshot) => {
-            let carePackage = snapshot.toJSON()[carePackageName];
+            let carePackage = snapshot.toJSON();
             return new CarePackage(carePackage.name,carePackage.description,carePackage.type,carePackage.items,carePackage.quantity,carePackage.members);
         })
     }

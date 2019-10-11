@@ -12,6 +12,12 @@ class User {
         if(subscriptions === undefined){
             subscriptions = {};
         }
+        if(subscriptions.food === undefined){
+            subscriptions.food = {};
+        }
+        if(subscriptions.carepackages === undefined){
+            subscriptions.carepackages = {};
+        }
         this.subscriptions = subscriptions;
 
         if(familyinfo === undefined){
