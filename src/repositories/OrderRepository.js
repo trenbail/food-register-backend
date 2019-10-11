@@ -17,8 +17,8 @@ class OrderRepository {
     }
 
     editOrder(orderObj){
-        database.ref("/orders/" + orderObj.orderNo).update({
-            "orderno": orderObj.orderNo,
+        database.ref("/orders/" + orderObj.orderno).update({
+            "orderno": orderObj.orderno,
             "user": orderObj.user,
             "items": orderObj.items,
             "status": orderObj.status,
