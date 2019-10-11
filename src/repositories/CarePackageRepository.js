@@ -43,6 +43,10 @@ class CarePackageRepository {
         database.ref('inventory/carepackages/'+ carePackageObj.name + "/members").set(carePackageObj.members);
     }
 
+    addMember(carePackageObj){
+        database.ref('inventory/carepackages/'+ carePackageObj.name + "/members").update(carePackageObj.members);
+    }
+
 }
 const carePackageRepository = new CarePackageRepository();
 module.exports = carePackageRepository;
