@@ -8,7 +8,7 @@ const userRepository = require('../repositories/UserRepository');
 const User = require('../domain/beans/User');
 
 
-userController.all("*", globalFunction.verifySession);
+//userController.all("*", globalFunction.verifySession);
 
 userController.route('/')
     .get((request,response, next) => {
