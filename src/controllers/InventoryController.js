@@ -119,9 +119,10 @@ inventoryController.route('/getCarePackageInventory')
         });
     });
 
-inventoryController.route('/subscribetocarepackage/:carepackage')
+inventoryController.route('/subscribeToCarePackage/:carepackage')
     .post((request,response) => {
        let carepackage = request.params.carepackage;
+       console.log(carepackage)
        let userObj = sessionManager.getSession(request.cookies.sessionId);
        carePackageRepository.getCarePackage(carepackage).then((carePackageObj) => {
            carePackageSubscribe.subscribe(userObj,carePackageObj);
