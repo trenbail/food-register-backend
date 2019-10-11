@@ -1,8 +1,8 @@
 class User {
 
-    constructor(username,usertype,password,phone,address,email,subscriptions,family){
-        this.username = username;
-        this.usertype = usertype;
+    constructor(username,usertype,password,phone,address,email,subscriptions,familyinfo){
+        this.userName = username;
+        this.userType = usertype;
         this.password = password;
         this.phone = phone;
         this.address = address;
@@ -13,10 +13,10 @@ class User {
         }
         this.subscriptions = subscriptions;
 
-        if(family === undefined){
-            family = {};
+        if(familyinfo === undefined){
+            familyinfo = {};
         }
-        this.family = family;
+        this.familyInformation = familyinfo;
     }
 
     authenticate(password){
