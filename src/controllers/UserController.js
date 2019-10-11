@@ -8,7 +8,7 @@ const userRepository = require('../repositories/UserRepository');
 const User = require('../domain/beans/User');
 
 
-//userController.all("*", globalFunction.verifySession);
+userController.all("*", globalFunction.verifySession);
 
 userController.route('/')
     .get((request,response, next) => {
@@ -49,7 +49,7 @@ userController.route('/createProfile')
         userRepository.doesUserExist(data.username)
             .then((result) => {
                 if(!result) {
-                    let tempUser = new User(data.username, data.usertype, data.password, data.phone, data.address, data.email, {}, {});
+                    let tempUser = new User(data.username,data.fullname, data.usertype, data.password, data.phone, data.address, data.email, {}, {});
                     userRepository.createUser(tempUser);
                     response.status(200).json({success: "The user has been created"});
                 } else {
@@ -71,7 +71,7 @@ userController.route("/getUser")
 
 userController.route('/updateProfile')
     .post((request, response) => {
-        let tempUser = new User(request.body.username,request.body.usertype,request.body.password,request.body.phone,request.body.address,request.body.email,request.body.subscriptions,request.body.familyinfo);
+        let tempUser = new User(request.body.username,request.fullName,request.body.usertype,request.body.password,request.body.phone,request.body.address,request.body.email,request.body.subscriptions,request.body.familyinfo);
         userRepository.updateUser(tempUser);
     });
 
