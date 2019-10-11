@@ -29,14 +29,14 @@ userController.route('/login')
                         //Create a new session
                         let session = sessionManager.newSession(user);
                         response.cookie('sessionId', session.sessionId);
-                        response.json(sessionManager.sessions);
+                        response.status(200).json({success: "You have logged in!"})
                     } else {
-                        response.json({error: "Username or password incorrect"});
+                        response.status(403).json({error: "Username or password incorrect"});
                     }
                 });
         } else {
             //They sent the request without a username or password in the body
-            response.json({error: "Username or Password were empty"})
+            response.status(403).json({error: "Username or Password were empty"})
         }
     });
 
