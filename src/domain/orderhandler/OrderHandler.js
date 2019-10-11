@@ -7,6 +7,7 @@ const orderRepository = require('../../repositories/OrderRepository');
 class OrderHandler {
 
     static fulfillOrder(userObj,orderObj){
+        console.log(orderObj);
         let keys = _.keys(orderObj.items);
         for(let item of keys){
             if(orderObj.items[item].itemType === 'food'){
