@@ -3,6 +3,7 @@ const sessionManager = require('./SessionManager');
 const  verifySession = (req,res,next)=>{
     let sessionId = req.cookies.sessionId;
     if(req.path === "/login" || req.path === "/createprofile"){
+        console.log(req.path);
         next();
     } else if (sessionId !== undefined){
         if(sessionManager.idSessionExists(sessionId)){

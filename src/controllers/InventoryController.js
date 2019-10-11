@@ -11,7 +11,7 @@ const carePackageRepository = require('../repositories/CarePackageRepository');
 const foodRepository = require('../repositories/FoodRepository');
 const _ = require("underscore");
 
-//inventoryController.all("*", globalFunction.verifySession);
+inventoryController.all("*", globalFunction.verifySession);
 
 inventoryController.route('/registerFood')
     .post((request, response) => {
