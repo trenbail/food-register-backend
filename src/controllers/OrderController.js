@@ -30,7 +30,10 @@ orderController.route('/fulfillOrder/:orderid')
         let userObj = sessionManager.getSession(request.cookies.sessionId);
         let orderId = request.params.orderid;
         if(orderId){
-            orderHandler.fulfillOrder(userObj,orderId);
+            orderRepository.getOrder(orderId)
+                .then((orderObj) => {
+                    orderHandler.fulfillOrder(userObj,orderObj);
+                });
             response.json({success: "Order Has been fufilled"});
         }
     });

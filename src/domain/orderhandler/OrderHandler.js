@@ -2,6 +2,7 @@ const _ = require('underscore');
 
 const foodRepository = require('../../repositories/FoodRepository');
 const carePackageRepository = require('../../repositories/CarePackageRepository');
+const orderRepository = require('../../repositories/OrderRepository');
 
 class OrderHandler {
 
@@ -16,6 +17,7 @@ class OrderHandler {
             orderObj.completedBy = userObj.userName;
             orderObj.completedDate = new Date();
             orderObj.status = 'completed';
+            orderRepository.editOrder(orderObj);
             //NOTIFY USER HERE
             //TODO: NOTIFY USER SOMEHOW
         }

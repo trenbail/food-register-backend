@@ -47,6 +47,12 @@ class OrderRepository {
         });
     }
 
+    getOrder(orderId){
+        return database.ref('/orders/'+ orderId).once('value').then((snapshot) =>{
+            return snapshot.toJSON();
+        })
+    }
+
 }
 
 const orderRepository = new OrderRepository();
