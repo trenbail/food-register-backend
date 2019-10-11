@@ -6,6 +6,7 @@ const Order = require('../domain/beans/Order');
 const globalFunction = require('../domain/sessionmanager/GlobalFunction');
 const sessionManager = require('../domain/sessionmanager/SessionManager');
 const orderRepository = require('../repositories/OrderRepository');
+const orderHandler = require('../domain/orderhandler/OrderHandler');
 const carePackageRepository = require('../repositories/CarePackageRepository');
 
 
@@ -26,7 +27,12 @@ orderController.route('/requestOrder')
 
 orderController.route('/fulfillOrder/:orderid')
     .post((request, response) => {
-
+        let userObj = sessionManager.getSession(request.cookies.sessionId);
+        let orderId = request.params.orderid;
+        if(orderId){
+            orderHandler.fulfillOrder(userObj,orderId);
+            response.json({success: "Order Has been fufilled"});
+        }
     });
 
 orderController.route('/getOpenOrders')

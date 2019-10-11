@@ -5,7 +5,7 @@ const carePackageRepository = require('../../repositories/CarePackageRepository'
 
 class OrderHandler {
 
-    static fulfillOrder(orderObj){
+    static fulfillOrder(userObj,orderObj){
         let keys = _.keys(orderObj.items);
         for(let item of keys){
             if(orderObj.items[item].itemType === 'food'){
@@ -13,6 +13,8 @@ class OrderHandler {
             } else if (orderObj.items[item].itemType === 'carepackage') {
                 this.updateCarePackageInventory(orderObj.items[item]);
             }
+            orderObj.completedBy = userObj.userName;
+            orderObj.completedDate = new Date();
             orderObj.status = 'completed';
             //NOTIFY USER HERE
             //TODO: NOTIFY USER SOMEHOW
