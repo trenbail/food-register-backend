@@ -69,6 +69,7 @@ inventoryController.route('/getSubscribedFood')
 inventoryController.route('/subscribeToCarePackage/:carepackage')
     .post((request, response) => {
         let carepackage = request.params.carepackage;
+        console.log(carepackage);
         let userObj = sessionManager.getSession(request.cookies.sessionId);
         carePackageRepository.getCarePackage(carepackage)
             .then((carePackageObj) => {
@@ -119,16 +120,6 @@ inventoryController.route('/getCarePackageInventory')
         });
     });
 
-inventoryController.route('/subscribeToCarePackage/:carepackage')
-    .post((request,response) => {
-       let carepackage = request.params.carepackage;
-       console.log(carepackage)
-       let userObj = sessionManager.getSession(request.cookies.sessionId);
-       carePackageRepository.getCarePackage(carepackage).then((carePackageObj) => {
-           carePackageSubscribe.subscribe(userObj,carePackageObj);
-           response.status(200).json({success: "Subscribed to care package!"});
-       });
-    });
 
 inventoryController.route('/getSubscribedCarePackages')
     .get((request,response) => {
