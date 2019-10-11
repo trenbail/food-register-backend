@@ -31,12 +31,14 @@ userController.route('/login')
                         response.cookie('sessionId', session.sessionId);
                         response.status(200).json({success: "You have logged in!"})
                     } else {
-                        response.status(403).json({error: "Username or password incorrect"});
+                        response.status(200).json({error: "Username or password incorrect"});
                     }
-                });
+                }).catch((err) => {
+                response.status(200).json({error: "Username or password incorrect"});
+            });
         } else {
             //They sent the request without a username or password in the body
-            response.status(403).json({error: "Username or Password were empty"})
+            response.status(200).json({error: "Username or Password were empty"})
         }
     });
 
