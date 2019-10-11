@@ -26,6 +26,7 @@ class OrderHandler {
 
     static updateFoodInventory(item){
         foodRepository.getFoodItem(item.itemName).then((foodObj) => {
+            console.log(foodObj);
             foodObj.quantity -= item.quantity;
             foodRepository.editFood(foodObj);
         })
