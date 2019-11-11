@@ -1,7 +1,7 @@
 {
   "firebase": {
-    "apiKey": "AIzaSyAceGfMTzpJgfs9C-Nj5Q7mOTJ5kMamCM4",
+    "apiKey": "",
     "authDomain": "",
-    "databaseURL": "https://food-registry-inc.firebaseio.com"
+    "databaseURL": ""
   }
 }
